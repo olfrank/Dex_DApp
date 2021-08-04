@@ -1,18 +1,23 @@
+
+// import Dex from '../build/Dex.json'
+// const dex = new web3.eth.Contract(abi, contractAddress);
+let web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
+
 //import Web3, { givenProvider } from 'web3';
 // Web3 = require('web3');
-var web3 = new Web3(givenProvider);
+// var web3 = new Web3(web3.givenProvider);
 
 
-var contractAddress = "0x7C852b0A1Fb041bB8772C75f9fBd2d41c6c964c0"
+var contractAddress = "0xF7de7D15577708fC12cd3044a793064B9e55bBD6"
 
 $(document).ready(function(){
     window.ethereum.enable().then(async function(accounts){
-        dex = await new web3.eth.Contract(abi.window, contractAddress, {from: accounts[0]})
-        showETHBalance();
-        showOrderbookBuy();
-        showOrderbookSell();
-        showTokenList();
-        showTokenBalance();
+        dex = await new web3.eth.Contract(abi, contractAddress, {from: accounts[0]})
+        // showETHBalance();
+        // showOrderbookBuy();
+        // showOrderbookSell();
+        // showTokenList();
+        // showTokenBalance();
        
     })
 
@@ -21,13 +26,13 @@ function reloadPage(){
     location.reload();
 }
 
-$("#btndepositEth").on(click, depositEth);
-$("#btnwithdrawEth").on(click, withdrawEth);
-$("#btnLimitOrder").on(click, placeLimitOrder);
-$("#btnMarketOrder").on(click, placeMarketOrder);
-$("#btnOrderbook").on(click, reloadPage);
-$("#btnTokenDeposit").on(click, depositTokens);
-$("#btnTokenWithdraw").co(click, withdrawTokens);
+$("#btndepositEth").click(depositEth);
+$("#btnwithdrawEth").click(withdrawEth);
+$("#btnLimitOrder").click(placeLimitOrder);
+$("#btnMarketOrder").click(placeMarketOrder);
+$("#btnOrderbook").click(reloadPage);
+$("#btnTokenDeposit").click(depositTokens);
+$("#btnTokenWithdraw").click(withdrawTokens);
 
 
 async function depositEth (){
