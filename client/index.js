@@ -1,22 +1,59 @@
+<<<<<<< HEAD
+=======
+
+// import Dex from '../build/Dex.json'
+// const dex = new web3.eth.Contract(abi, contractAddress);
+let web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
+
+//import Web3, { givenProvider } from 'web3';
+// Web3 = require('web3');
+// var web3 = new Web3(web3.givenProvider);
+>>>>>>> 37c3d9f779b349a2a7665ebb83277b8a031098cd
 
 // var web3 = new Web3(givenProvider);
 let web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
 
+<<<<<<< HEAD
+=======
+var contractAddress = "0xF7de7D15577708fC12cd3044a793064B9e55bBD6"
+>>>>>>> 37c3d9f779b349a2a7665ebb83277b8a031098cd
 
 var contractAddress = "0x72f3d9f4C587C753ad065e7d8387fDc8ffce525f"
 
 $(document).ready(function (){
     window.ethereum.enable().then(async function(accounts){
         dex = await new web3.eth.Contract(abi, contractAddress, {from: accounts[0]})
+<<<<<<< HEAD
         showETHBalance();
         showOrderbookBuy();
         showOrderbookSell();
         showTokenList();
         showTokenBalance();
+=======
+        // showETHBalance();
+        // showOrderbookBuy();
+        // showOrderbookSell();
+        // showTokenList();
+        // showTokenBalance();
+>>>>>>> 37c3d9f779b349a2a7665ebb83277b8a031098cd
        
     })
 
 
+<<<<<<< HEAD
+=======
+function reloadPage(){
+    location.reload();
+}
+
+$("#btndepositEth").click(depositEth);
+$("#btnwithdrawEth").click(withdrawEth);
+$("#btnLimitOrder").click(placeLimitOrder);
+$("#btnMarketOrder").click(placeMarketOrder);
+$("#btnOrderbook").click(reloadPage);
+$("#btnTokenDeposit").click(depositTokens);
+$("#btnTokenWithdraw").click(withdrawTokens);
+>>>>>>> 37c3d9f779b349a2a7665ebb83277b8a031098cd
 
 
 $("#btndepositEth").click(depositEth);
@@ -159,6 +196,7 @@ async function depositEth (){
     
 }
 
+<<<<<<< HEAD
 
 
 
@@ -171,4 +209,6 @@ async function depositEth (){
 
 
 
+=======
+>>>>>>> 37c3d9f779b349a2a7665ebb83277b8a031098cd
 });
